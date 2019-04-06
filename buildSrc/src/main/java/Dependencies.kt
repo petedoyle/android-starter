@@ -25,6 +25,7 @@ private object Versions {
 
 @Suppress("unused")
 object Deps {
+    // @formatter:off
     // SDK Versions
     const val minSdkVersion = 15
     const val targetSdkVersion = 27
@@ -57,6 +58,7 @@ object Deps {
         const val androidx_junit = "androidx.test.ext:junit:${Versions.AndroidTest.androidx_junit}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espresso}"
     }
+    // @formatter:on
 
     /**
      * Apply common repos for the `buildscript` block.
