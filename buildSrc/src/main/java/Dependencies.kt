@@ -4,10 +4,12 @@ private object Versions {
     const val androidx_appcompat = "1.0.2"
     const val androidx_constraintlayout = "1.1.3"
     const val androidx_ktx = "1.0.1"
+    const val dagger = "2.22.1"
+    const val javax_annotation_jsr250 = "1.0"
     const val kotlin = "1.3.21"
 
     object Build {
-        const val android_gradle_plugin = "3.5.0-alpha07"
+        const val android_gradle_plugin = "3.5.0-alpha10"
         const val kotlin_gradle_plugin = Versions.kotlin
     }
 
@@ -23,9 +25,23 @@ private object Versions {
 
 @Suppress("unused")
 object Deps {
+    // SDK Versions
+    const val minSdkVersion = 15
+    const val targetSdkVersion = 27
+    const val compileSdkVersion = 28
+
+    // Test Runner
+    const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+    // Dependencies
     const val androidx_appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
     const val androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintlayout}"
     const val androidx_ktx = "androidx.core:core-ktx:${Versions.androidx_ktx}"
+    const val dagger_android = "com.google.dagger:dagger-android:${Versions.dagger}"
+    const val dagger_android_support = "com.google.dagger:dagger-android-support:${Versions.dagger}"
+    const val dagger_android_processor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    const val dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    const val javax_annotation_jsr250 = "javax.annotation:jsr250-api:${Versions.javax_annotation_jsr250}"
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
     object Build {

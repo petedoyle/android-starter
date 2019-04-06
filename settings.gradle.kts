@@ -1,2 +1,1 @@
-include(":app")
-rootProject.name="Android Starter App"
+include(":app", ":daggerutil")

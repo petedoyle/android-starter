@@ -1,18 +1,15 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("android.extensions")
-    kotlin("kapt")
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
     compileSdkVersion(Deps.compileSdkVersion)
 
     defaultConfig {
-        applicationId = "dev.petedoyle.starter"
         minSdkVersion(Deps.minSdkVersion)
         targetSdkVersion(Deps.targetSdkVersion)
-
         versionCode = 1
         versionName = "1.0"
 
@@ -29,9 +26,6 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(":daggerutil"))
-
-    // Common
     implementation(Deps.kotlin_stdlib)
 
     // Dagger
@@ -40,11 +34,6 @@ dependencies {
     implementation(Deps.dagger_android)
     implementation(Deps.dagger_android_support)
     compileOnly(Deps.javax_annotation_jsr250)
-
-    // Normal
-    implementation(Deps.androidx_appcompat)
-    implementation(Deps.androidx_constraintlayout)
-    implementation(Deps.androidx_ktx)
 
     // Testing
     testImplementation(Deps.Test.junit)
