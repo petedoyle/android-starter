@@ -1,8 +1,16 @@
+import org.jetbrains.kotlin.gradle.internal.AndroidExtensionsExtension
+
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+}
+
+androidExtensions {
+    configure(delegateClosureOf<AndroidExtensionsExtension> {
+        isExperimental = true // required for @Parcelize on data classes
+    })
 }
 
 android {
