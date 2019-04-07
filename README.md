@@ -1,5 +1,5 @@
 
-### A base repo for starting a new best-practices Android app, *fast.*
+### Best-practices infrastructure for starting a new Android app, *fast.*
 
 Minimally opinionated, it provides:
 
