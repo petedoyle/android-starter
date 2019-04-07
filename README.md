@@ -24,7 +24,7 @@ It *does not provide*:
     - HTTP loading - Use Retrofit, etc.
     - JSON parsing - Use GSON, Moshi, etc.
     - Photo loading - Use Picasso, Glide, etc.
-    - Logging - Use Timber, etc
+    - Logging - Use Timber, etc.
     - Crash logging - Use Crashlytics, etc.
 
 
