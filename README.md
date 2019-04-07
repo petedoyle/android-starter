@@ -42,28 +42,46 @@ It *does not provide*:
 #### Investigating
 - Fastlane support
 
-## Starting a new project
-1. Clone this repo: `git clone https://github.com/petedoyle/kindling.git`
-2. Convert it into a new repo:
+## Starting a new app
+1. Decide on your app's repo name (e.g. `myapp`)
 
     ```
-    $ cd kindling && \
+    $ KINDLING_REPO_NAME=myapp
+    ```
+2. Create your new repo:
+
+    ```
+    $ git clone https://github.com/petedoyle/kindling.git $KINDLING_REPO_NAME && \
+        cd $KINDLING_REPO_NAME && \
         AS_VERSION="$(git rev-parse --abbrev-ref HEAD)@$(git rev-parse --short HEAD)" && \
         rm -rf .git && \
         git init && \
         git add . && \
-        git commit -m "Create new project from petedoyle/android-starter ($AS_VERSION)"
+        git commit -m "Create new project from github.com/petedoyle/kindling ($AS_VERSION)" && \
+        unset KINDLING_REPO_NAME
     ```
-3. Run it on a device
+
+3. Open `myapp/build.gradle.kts` in Android Studio. Or, if you've installed the command line launcher:
 
     ```
-    $ ./gradlew install
+    $ studio build.gradle.kts
     ```
-3. Push your repo to Github, etc.
-4. Rename the source folder
+
+***That's it! You're ready to dev!*** 🔥
+
+## Finding your way around
+
+- See `MainActivity` to see the sample activity. Note the package: `dev.petedoyle.starter.feature.main`.
+- See `MainModule` to see how `MainActivity`'s dependencies can be provided. The lifetime of `MainModule`'s object graph is scoped to `MainActivity` (because `@ContributesAndroidInjector` in `ActivityBindingModule` created a Dagger `Subcomponent` under the hood, scoped to `MainActivity`).
+- See `AppModule` to see how app-wide dependencies can be provided.
+- See `buildSrc/src/main/java/Dependencies.kt` for declaring libraries and their versions.
+- See `app/build.gradle` to see how to consume libraries, e.g.
+
     ```
-    $ cd .. && mv kindling [new repo name]
+    implementation(Deps.androidx_appcompat)
     ```
+- See `daggerutil/build.gradle.kts` to see how to set up a module's build script.
+- See how multiple modules' `build.gradle.kts` refer to `Deps.[name]`, thus allowing you to update dependency versions across many gradle modules at once.
 
 # License
 
