@@ -8,7 +8,7 @@ Minimally opinionated, it provides:
 - **Gradle [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)**
 - **buildSrc [pattern](https://handstandsam.com/2018/02/11/kotlin-buildsrc-for-better-gradle-dependency-management/)** for better dependency management and multi-module development
 - **Kotlin experimental extensions** so you can use [Parcelize](https://kotlinlang.org/docs/tutorials/android-plugin.html) on data classes
-- **Dagger 2 pre-configured -** with *just* enough code to help understand the Kotlin syntax
+- **Dagger 2 pre-configured -** with *just* enough code to help understand the tricky [Kotlin](https://github.com/petedoyle/android-starter/blob/fa07f0b2eb14193732ebec610974c082af81f524/app/src/main/java/dev/petedoyle/starter/features/main/MainModule.kt#L11-L22) [syntax](https://github.com/petedoyle/android-starter/blob/fa07f0b2eb14193732ebec610974c082af81f524/app/src/main/java/dev/petedoyle/starter/features/main/MainActivity.kt#L12-L13)
 - **Packaging by feature -** Lots of benefits, but also makes it easier to later use Gradle modules to improve build speeds
 - **Kotlin code formatting -** based on the official [Kotlin coding conventions](https://kotlinlang.org/docs/reference/coding-conventions.html), with small tweaks:
      - 120 character line limit
@@ -19,6 +19,14 @@ It *does not provide*:
 
 - **Architecture -** Use MVVM, MVP, MVI, or roll your own.
 - **Persistence -** Use Room, SQLDelight, etc.
+- **Other Libraries -** 
+    - Async - Use RxJava, Coroutines, etc.
+    - HTTP loading - Use Retrofit, etc.
+    - JSON parsing - Use GSON, Moshi, etc.
+    - Photo loading - Use Picasso, Glide, etc.
+    - Logging - Use Timber, etc
+    - Crash logging - Use Crashlytics, etc.
+
 
 #### Coming soon
 - **Incremental annotation processing -** for faster builds (waiting for a few more annotation processors to [support](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/userguide/java_plugin.adoc#state-of-support-in-popular-annotation-processors) it)
