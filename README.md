@@ -30,6 +30,7 @@ It *does not provide*:
 
 
 #### Coming soon
+- **Rename default package** (currently `dev.petedoyle.starter`)
 - **Incremental annotation processing -** for faster builds (waiting for a few more annotation processors to [support](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/userguide/java_plugin.adoc#state-of-support-in-popular-annotation-processors) it)
 - **Automatic `versionCode` management -** for CI builds
 - Sample CircleCI config that:
@@ -42,26 +43,27 @@ It *does not provide*:
 - Fastlane support
 
 ## Starting a new project
-- Clone this repo: 
-    - `git clone https://github.com/petedoyle/kindling.git`
+1. Clone this repo: `git clone https://github.com/petedoyle/kindling.git`
+2. Convert it into a new repo:
 
-- Run these commands:
+    ```
+    $ cd kindling && \
+        AS_VERSION="$(git rev-parse --abbrev-ref HEAD)@$(git rev-parse --short HEAD)" && \
+        rm -rf .git && \
+        git init && \
+        git add . && \
+        git commit -m "Create new project from petedoyle/android-starter ($AS_VERSION)"
+    ```
+3. Run it on a device
 
-```
-# Remember the version you cloned
-$ AS_VERSION="$(git rev-parse --abbrev-ref HEAD)@$(git rev-parse --short HEAD)"
-
-# Delete the existing git repo, leaving the contents
-$ rm -rf .git
-
-# Init a new repo
-$ git init
-
-# Commit your project
-$ git add . && git commit -m "Create new project from petedoyle/android-starter ($AS_VERSION)"
-```
-
-Then, push your repo to Github, etc.
+    ```
+    $ ./gradlew install
+    ```
+3. Push your repo to Github, etc.
+4. Rename the source folder
+    ```
+    $ cd .. && mv kindling [new repo name]
+    ```
 
 # License
 
