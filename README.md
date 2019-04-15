@@ -1,6 +1,6 @@
 
 ### Best-practices infrastructure for starting a new Android app, *fast.* 🔥
-Start your next app ***less than five minutes*** with full support for the Gradle Kotlin DSL, Dagger 2, multi-module builds, and CI. 
+Kindling is boilerplate for your next app with full support for the Gradle Kotlin DSL, Dagger 2, multi-module builds, and CI. 
 
 Minimally opinionated, it provides:
 
